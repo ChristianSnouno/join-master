@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="src/icons/join_logo.png">
+    <link rel="stylesheet" href="src/css/styles.css"/>
+    <script src="src/js/mini_backend.js"></script>
+    <script src="src/js/templates.js" defer></script>
+    <script src="src/js/script.js" defer></script>
+    <script src="src/js/backlog.js" defer></script>
+    <title>Backlog</title>
+  </head>
+  <body onload="initBacklog()">
+
+
+    <div class="layout">
+      <!-- === START NAVIGATION === -->
+      <nav id="desktop-nav" class=" desktop-nav"></nav>
+      <nav id="mobile-nav" class="d-none"></nav>
+      <!-- === END NAVIGATION === -->
+      <div id="content-backlog" class="content">
+        
+
+
+        <div class="headline-wrapper">
+          <div class="headline">Backlog</div>
+          <div class="sub-headline">Learning Management System Project</div>
+        </div>
+        <div id="task-container" class="task-container">
+          
+          <div id="edit-task-wrapper" class="edit-task-wrapper d-none">
+            <form id="form-edit-task" onsubmit = "updateTask(); return false;" class="task">
+            </form>
+          </div>
+
+        </div>          
+      </div>
+    </div>
+  </body>
+</html>
+

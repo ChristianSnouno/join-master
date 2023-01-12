@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="src/icons/join_logo.png">
+  <link rel="stylesheet" href="src/css/styles.css" />
+  <script src="src/js/mini_backend.js"></script>
+  <script src="src/js/templates.js" defer></script>
+  <script src="src/js/board.js" defer></script>
+  <script src="src/js/script.js" defer></script>
+  <title>Board</title>
+</head>
+
+<body onload="initBoard()">
+  <!-- === START BOARD === -->
+  <div class="layout">
+    <!-- === START NAVIGATION === -->
+    <nav id="desktop-nav" class="d-none"></nav>
+    <nav id="mobile-nav" class="d-none"></nav>
+    <!-- === END NAVIGATION === -->
+    <div id="content-task" class="content">
+      <div class="board-wrapper">
+        <div class="todo">
+          <div class="todo-header">
+            <h2>To Do</h2>
+          </div>
+          <div id="todo" class="todo-content" ondragleave="hoverHighlight('todo', false)"
+            ondragover="allowDrop(event); hoverHighlight('todo', true)" ondrop="moveTo('todo')">
+          </div>
+        </div>
+        <div class="inprogress">
+          <div class="inprogress-header">
+            <h2>In Progress</h2>
+          </div>
+          <div id="inprogress" class="inprogress-content" ondragleave="hoverHighlight('inprogress', false)"
+            ondragover="allowDrop(event); hoverHighlight('inprogress', true)" ondrop="moveTo('inprogress')">
+          </div>
+        </div>
+    
+        <div class="testing">
+          <div class="testing-header">
+            <h2>Testing</h2>
+          </div>
+          <div id="testing" class="testing-content" ondragleave="hoverHighlight('testing', false)"
+            ondragover="allowDrop(event); hoverHighlight('testing', true)" ondrop="moveTo('testing')">
+          </div>
+        </div>
+        <div class="done">
+          <div class="done-header">
+            <h2>Done</h2>
+          </div>
+          <div id="done" class="done-content" ondragleave="hoverHighlight('done', false)"
+            ondragover="allowDrop(event); hoverHighlight('done', true)" ondrop="moveTo('done')">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- === END BOARD === -->
+</body>
+
+</html>

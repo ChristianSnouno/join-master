@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="src/icons/join_logo.png">
+  <link rel="stylesheet" href="src/css/styles.css" />
+  <script src="src/js/mini_backend.js"></script>
+  <script src="src/js/templates.js" defer></script>
+  <script src="src/js/script.js" defer></script>
+  <script src="src/js/task.js" defer></script>
+  <title>Task</title>
+</head>
+
+  <body onload="initTask()">
+    
+    <div class="layout">
+      <!-- === START NAVIGATION === -->
+      <nav id="desktop-nav" class="d-none"></nav>
+      <nav id="mobile-nav" class="d-none"></nav>
+      <!-- === END NAVIGATION === -->
+      
+      <div id="content-task" class="content">
+
+        <div class="headline-wrapper">
+          <div class="headline">Add Task</div>
+          <div class="sub-headline">Learning Management System Project</div>
+        </div>
+
+        <form id="form-task" onsubmit = "addTask(); return false;" class="task">
+          <div id="msg-success" class="msg-success d-none">Task was created successfully</div>
+          <div class="item title-wrapper">
+            <div>TITLE</div>
+            <input id="title" required type="text">
+          </div>
+    
+          <div class="item date-wrapper">
+            <div>DUE DATE</div>
+            <input id="datePicker" required type="date">
+          </div>
+              
+          <div class="item category-wrapper">
+            <label for="category">CATEGORY</label>
+            <select name="category" id="category" required>
+              <option value="Management">Management</option>
+              <option value="Software-Development">Software Development</option>
+              <option value="Design">Design</option>
+              <option value="Human-Resources">Human Resources</option>
+            </select>
+          </div>
+
+          <div class="item urgency-wrapper">
+            <label for="urgency">URGENCY</label>
+            <select name="urgency" id="urgency" required>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+              
+          <div class="item description-wrapper">
+            <label for="description">DESCRIPTION</label>
+            <textarea required id="description" rows="3"></textarea>
+          </div>
+  
+          <div class="item assigned-wrapper">
+            <div>ASSIGNED TO</div>
+            <div id="task-image-wrapper" class="image-wrapper">
+              <img onclick="selectTaskEditors(this.id)" id="user-1" src="src/img/user-1.jpg" alt="">
+              <img onclick="selectTaskEditors(this.id)" id="user-2" src="src/img/user-2.jpg" alt="">
+              <img onclick="selectTaskEditors(this.id)" id="user-3" src="src/img/user-3.jpg" alt="">
+              <img onclick="selectTaskEditors(this.id)" id="user-4" src="src/img/user-4.jpg" alt="">
+              <img onclick="selectTaskEditors(this.id)" id="user-5" src="src/img/user-5.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="item button-wrapper">
+            <button type="button" onclick="resetForm()">CANCEL</button>
+            <button type="submit">CREATE TASK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
